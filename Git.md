@@ -55,11 +55,11 @@ git status -s // Mostrar estado de los archivos de forma resumida
     git restore . // Restaurar todo el directorio
     git restore '*.cs' // Restaurar ficheros terminado en .cs
     ```
-    > [!WARNING]
-    > Con `git restore` perderás todos lo cambios
+> [!WARNING]
+> Con `git restore` perderás todos lo cambios
 
-    > [!NOTE]  
-    > El comando `git restore` está disponible a partir de la versión de Git 2.23. Anteriormente se utilizaba el comando `git checkout` pero aunque sigue disponible se desaconseja su utilización.
+> [!NOTE]  
+> El comando `git restore` está disponible a partir de la versión de Git 2.23. Anteriormente se utilizaba el comando `git checkout` pero aunque sigue disponible se desaconseja su utilización.
 
 - Si el archivo o directorio no existía previamente (no rastreados por Git aún) tenemos dos opciones:
   - Eliminar los nuevos archivos con nuestro explorador de archivos
