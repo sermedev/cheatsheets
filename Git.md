@@ -32,6 +32,30 @@
     git config <configuración> // Mostrar valor config particular
     ```
   
+### Creación llave SSH
+Podemos conectarnos a GitHub vía SSH, para generar esta clave:
+
+1. Creamos la llave:
+    ``` c++
+        ssh-keygen -t rsa -b 4096 -C “tu@email.com”
+        // Dejar ruta por defecto, pulsar enter
+        // Asignar passphrase y pulsar enter
+        // Se crearán dos llaves:
+        //  - id_rsa     -> llave privada
+        //  - id_rsa.pub -> llave pública
+    ```
+2. Ahora, desde la consola de GitBash comprobamos que el servidor de llaves ssh de Windows está activo
+    > eval $(ssh-agent -s)
+    Nos deberá aparecer el pid de agente activo
+
+3. Añadir nuestra llave privada *id_rsa* al servidor de llaves ssh:
+    ``` c++
+        // ssh-add ruta-donde-guardaste-tu-llave-privada
+        ssh-add ~/.ssh/id_rsa
+    ```
+4. Ya podemos registrar nuestra llave pública *id_rsa.pub* en GitHub
+
+
 ## Git de forma local
 
 ### Creación de repositorio
