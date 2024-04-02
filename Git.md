@@ -94,4 +94,57 @@ git status -s // Mostrar estado de los archivos de forma resumida
     git clean -d // Borra archivos y directorios sin rastrear
     git clean -i // Pregunta antes de borrar cada archivo
     ```  
+### Añadir archivos al staging
+``` c++
+    // git add <archivos> 
+    git add index.html // Añadimos index.hmtl
+    git add archivo1.js archivo2.js // Añadimos 2 archivos
+    git add *.cs // Añadidmos todos los .cs
+    git add --all // Añadimos todos los modificados
+    git add . // Añadimos todos los modificados desde la raíz
+    git add resources/ // Añadimos todos los de la carpeta resources
+ ```  
+### Quitar archivos al staging
+``` c++
+    // git reset <archivo> para sacar del staging sin perder cambios
+    git reset index.html  // Sacamos index.hmtl
+ ```  
+ ### Confirmar cambios, commit
+``` c++
+    // git commit
+     git commit -m "Add new search feature"  // Commit con mensaje
+     git commit -m "Add new search feature" -m "Extended message" // Commit con mensaje principal y extendido
+ ```  
+
+ ### Confirmar cambios sin pasar por staging
+``` c++
+    git commit -am "Añadir al staging y commit con mensaje directo'
+ ```  
+
+### Deshacer último commit manteniendo los cambios
+> git reset --soft HEAD~1
+
+### Deshacer último commit perdiendo los cambios
+> git reset --hard HEAD~1
+
+> [!WARNING]  
+>  ¡Asegúrate que eso es lo que quieres! Se perderán los cambios
+
+
+### Cambiar mensaje del último commit 
+> git commit --amend -m "Nuevo mensaje"
+
+> [!NOTE]  
+>  --amend funciona con el último commit y siempre que NO esté publicado en el repositorio remoto
+
+### Añadir más cambios al último commit 
+``` c++
+    // Añade los archivos modificados que queremos añadir al commit anterior
+    git add archivo.cs
+    // Commit con el parámetro amend
+    git commit -am "Añade al staging y commit con mensaje'
+ ```  
+> [!NOTE]  
+>  --amend funciona con el último commit y siempre que NO esté publicado en el repositorio remoto
+
 
